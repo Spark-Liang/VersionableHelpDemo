@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <!--<include file="classpath:db/changelog/liquibase/db.changelog-DemoMasterPO.xml" relativeToChangelogFile="false"/>-->
+    <!--<include file="classpath:db/changelog/liquibase/db.changelog-DemoHistoryPO.xml" relativeToChangelogFile="false"/>-->
+
+    <changeSet id="Test_Id" author="nanospark">
+        <createTable tableName="TestPO">
+            <column name="id" autoIncrement="true" type="java.sql.Types.BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="java.sql.Types.NVARCHAR(32)"/>
+            <column name="localDate" type="java.sql.Types.DATE"/>
+        </createTable>
+
+        <loadData tableName="TestPO" file="classpath:/db/changelog/liquibase/insert_TestPO.csv">
+            <column name="id" type="NUMERIC"/>
+            <column name="name" type="STRING"/>
+            <column name="localDate" type="STRING"/>
+        </loadData>
+
+    </changeSet>
+</databaseChangeLog>

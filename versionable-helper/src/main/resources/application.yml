@@ -1,5 +1,16 @@
 ######################################
- #datasource
+#log
+######################################
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+    liquibase.statement: trace
+  path: ~/log/versionable-helper/
+  file: versionable-helper.log
+
+
+######################################
+#datasource
 ######################################
 spring:
   datasource:
@@ -12,7 +23,9 @@ spring:
     hibernate:
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
-      ddl-auto: update
+      ddl-auto: none
     properties:
       hibernate.show_sql: true
       hibernate.format_sql: true
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml

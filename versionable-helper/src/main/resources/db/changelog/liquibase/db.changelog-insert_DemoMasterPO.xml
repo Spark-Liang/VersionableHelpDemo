@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="insert_DemoMasterPO" author="liquibase">
+        <loadData tableName="DemoMasterPO"
+                  file="classpath:db/changelog/liquibase/insert_DemoMasterPO.csv">
+            <column name="version" type="NUMERIC"/>
+            <column name="initialEffectiveDate" type="STRING"/>
+            <column name="effectiveDate" type="STRING"/>
+            <column name="expiredDate" type="STRING"/>
+            <column name="name" type="STRING"/>
+            <column name="gender" type="STRING"/>
+            <column name="age" type="NUMERIC"/>
+            <column name="id" type="NUMERIC"/>
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create_DemoHistoryPO" author="liquibase">
+        <createTable tableName="DemoHistoryPO">
+            <column name="version" type="java.sql.Types.BIGINT"/>
+            <column name="initialEffectiveDate" type="java.sql.Types.DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="effectiveDate" type="java.sql.Types.DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="expiredDate" type="java.sql.Types.DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="name" type="java.sql.Types.NVARCHAR(64)"/>
+            <column name="gender" type="java.sql.Types.NVARCHAR(8)"/>
+            <column name="age" type="java.sql.Types.INTEGER"/>
+            <column name="histId" type="java.sql.Types.BIGINT" autoIncrement="true">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="masterId" type="java.sql.Types.BIGINT"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
